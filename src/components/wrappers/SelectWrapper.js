@@ -6,7 +6,11 @@ export default class SelectWrapper extends React.Component {
 
     onChange = (newValue) => {
         const {id, onChangeHandler} = this.props;
-        onChangeHandler(id, newValue);
+        if (newValue === null || newValue.length === 0) {
+            onChangeHandler(id, {value: null, label: ''});
+        } else {
+            onChangeHandler(id, newValue);
+        }
     };
 
     onBlur = (event) => {

@@ -78,7 +78,7 @@ export default class RootContainer extends React.Component {
     }
 
     componentWillReceiveProps(newProps) {
-        if (newProps.touch && !this.props.delayedTouch) {
+        if (newProps.touch && !this.state.delayedTouch) {
             setTimeout(() => {
                 this.setState({
                     delayedTouch: true
@@ -97,7 +97,10 @@ export default class RootContainer extends React.Component {
                 label="Yes"
                 primary={true}
                 keyboardFocused={true}
-                onTouchTap={this.handleNewGame}
+                onTouchTap={() => {
+                    this.handleNewGame();
+                    this.handleDialogClose();
+                }}
             />,
             <FlatButton
                 label="No"
@@ -123,21 +126,20 @@ export default class RootContainer extends React.Component {
                             margin: '200px auto 0',
                             display: this.clicked ? 'none' : 'block'
                         }}
-                        visible={false}
                     />
                 </MuiThemeProvider>
                 <Road
                     windowWidth={windowWidth}
-                    speed={settings.roadSpeed.value}
-                    minBlockHeight={settings.minBlockHeight.value}
-                    blockWidth={settings.blockWidth.value}
-                    blockDensity={settings.blockDensity.value}
+                    speed={settings.roadSpeed.value || 3}
+                    minBlockHeight={settings.minBlockHeight.value || 40}
+                    blockWidth={settings.blockWidth.value || 30}
+                    blockDensity={settings.blockDensity.value || 2}
                 />
                 <Ball
-                    roadSpeed={settings.roadSpeed.value}
+                    roadSpeed={settings.roadSpeed.value || 3}
                     windowWidth={windowWidth}
-                    animationTime={settings.jumpTime.value}
-                    jumpHeight={settings.jumpHeight.value}
+                    animationTime={settings.jumpTime.value || 1000}
+                    jumpHeight={settings.jumpHeight.value || 300}
                 />
                 <NewGameDialog
                     settings={settings}

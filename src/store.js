@@ -1,12 +1,12 @@
-import {createStore, applyMiddleware, compose} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
 import CombinedReducer from './reducers/CombinedReducer';
+import thunk from 'redux-thunk';
 
 
 const store = createStore(
     CombinedReducer,
     {},
-    compose(applyMiddleware(store => next => action =>
-        typeof action === 'function' ? action(store.dispatch, store.getState) : next(action)))
+    applyMiddleware(thunk)
 );
 
 export default store;

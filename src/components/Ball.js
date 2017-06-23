@@ -90,6 +90,7 @@ export default class Ball extends React.Component {
     };
 
     componentWillMount() {
+        window.addEventListener('keydown', this.keydownEventListener);
         this.animationRotate();
     }
 
