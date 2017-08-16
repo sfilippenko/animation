@@ -5,7 +5,7 @@ const NODE_ENV = process.env.NODE_ENV;
 
 module.exports = {
     devtool: NODE_ENV === 'production' ? false : 'source-map',
-    entry: ['./src/index'],
+    entry: ['babel-polyfill', './src/index'],
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'bundle.js',
