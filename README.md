@@ -4,10 +4,10 @@ Mini web game. Press space to jump
 
 ## Prerequisites
 
-If you don't have webpack-dev-server istalled globally, install it
+to run project type
 
 ```
-npm i webpack-dev-server -g
+npm start
 ```
 
 ## Built With
