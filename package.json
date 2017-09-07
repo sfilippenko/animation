@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --content-base build",
-    "heroku-prebuild": "NPM_CONFIG_PRODUCTION=false",
+    "heroku-prebuild": "heroku config:set NODE_MODULES_CACHE=false",
     "postinstall": "webpack -p",
     "start": "node server.js"
   },
