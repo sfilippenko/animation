@@ -9,6 +9,9 @@
     "postinstall": "NODE_ENV=production webpack",
     "start": "NODE_ENV=production node server.js"
   },
+  "engine": {
+    "node": "6.10.0"
+  },
   "keywords": [],
   "author": "Sergey Filippenko",
   "license": "ISC",
