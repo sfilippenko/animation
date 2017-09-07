@@ -7,7 +7,7 @@ Mini web game. Press space to jump
 to run project type
 
 ```
-npm start
+npm run dev
 ```
 
 ## Built With
