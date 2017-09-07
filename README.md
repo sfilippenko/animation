@@ -9,10 +9,11 @@ to run project type
 ```
 npm run dev
 
+```
+
 ## Deployment
 
 https://ball-jump.herokuapp.com/
-```
 
 ## Built With
 
