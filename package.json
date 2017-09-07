@@ -4,12 +4,16 @@
   "description": "Ball-jump game",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --content-base build"
+    "dev": "webpack-dev-server --content-base build",
+    "heroku-prebuild": "npm install --only=dev",
+    "postinstall": "NODE_ENV=production webpack",
+    "start": "NODE_ENV=production node server.js"
   },
   "keywords": [],
   "author": "Sergey Filippenko",
   "license": "ISC",
   "dependencies": {
+    "express": "4.15.4",
     "material-ui": "0.18.3",
     "react": "15.6.0",
     "react-dom": "15.6.0",

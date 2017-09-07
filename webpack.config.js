@@ -9,7 +9,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'bundle.js',
-        publicPath: '/assets/'
+        publicPath: '/'
     },
 
     resolve: {
@@ -35,14 +35,8 @@ module.exports = {
             },
             {
                 test: /\.(jpe?g|png|gif|svg)$/i,
-                include: path.join(__dirname, 'images'),
                 use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            limit: 8192
-                        }
-                    }
+                    {loader: 'file-loader'}
                 ]
             }
         ]
