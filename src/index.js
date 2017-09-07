@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import RootContainer from './components/RootContainer';
-import store from './Store';
+import store from './store';
 require('../styles/app.scss');
 
 ReactDOM.render(

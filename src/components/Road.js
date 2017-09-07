@@ -1,11 +1,13 @@
 import React from 'react';
 import TouchDot from './TouchDot';
-require('../../styles/road.scss');
 import GeneralSettings from '../constants/GeneralSettings';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {setRoadContainerLeft, changeBlockOptionsArr, ballTouchBlock, rememberBumpCoordinates} from '../actions/road';
 import {setCountDown, setNewGame} from '../actions/common';
+
+
+import '../../styles/road.scss';
 
 @connect(
     (state) => {
