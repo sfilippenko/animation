@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --content-base build",
-    "heroku-prebuild": "npm install & npm install --only=dev",
+    "heroku-prebuild": "npm install && npm install --only=dev",
     "postinstall": "webpack -p",
     "start": "node server.js"
   },
